@@ -56,6 +56,7 @@ body {
     color: azure;
 }
 textarea {
+    font-size: 100%;
     resize: none;
     color: inherit;
 }
