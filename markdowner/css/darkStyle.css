@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: azure;
+    background-color: rgb(30, 30, 30); 
+
+}
+#topBar {
+    background-color: rgb(60, 60, 60);
+    padding: 10px;
+}
+#logo {
+    font-size: 150%;
+    color: azure;
+    float: left;
+    margin: 0;
+}
+#buttons {
+    display: table;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.toggleButton {
+    float:left;
+    border: 1px solid rgb(17, 17, 17);
+    border-right: none;
+    padding: 6px;
+    background-color: rgb(30, 30, 30);
+    color: azure;
+    font-size: 110%;
+}
+#mdButton {
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+#outputButton {
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-right: 1px solid rgb(17, 17, 17);
+}
+.highlightedButton {
+    background-color: rgb(45, 45, 45);
+}
+.activeButton {
+    background-color: rgb(45, 45, 45);
+}
+.panel {
+    margin: 0 0 0 0;
+    border: 1px solid rgb(17, 17, 17);
+    border-left: none;
+    background-color: rgb(30, 30, 30);
+    position: relative;
+    float: left;
+}
+#contentWrapper {
+    color: azure;
+}
+textarea {
+    resize: none;
+    color: inherit;
+}
+#outputPanel {
+  border: none;
+
+}
+.hidden {
+    display: none;
+}
