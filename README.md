@@ -3,6 +3,6 @@ A web based markdown viewer. Markdowner processes everything client side. Nothin
 
 To use Markdowner just put the contents of the Markdowner sub-directory into your web root.
 
-Markdown uses [https://github.com/showdownjs/showdown](Showdown) as its markdown converter.
-and [https://jquery.com/](jQuery).
+Markdown uses [Showdown](https://github.com/showdownjs/showdown) as its markdown converter.
+and [jQuery](https://jquery.com/).
 
