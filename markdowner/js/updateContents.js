@@ -5,9 +5,9 @@ function updateContentBody () {
 
 function updateContentHead (updateWith) {
     $("iframe").contents().find("head").html(
-        "<style type='text/css'>" + 
-        $("#cssPanel").val() + 
-        "</style> <base target='_blank'>"
+                                        "<style type='text/css'>" + 
+                                        $("#cssPanel").val() + 
+                                        "</style> <base target='_blank'>"
     );
 }
 
