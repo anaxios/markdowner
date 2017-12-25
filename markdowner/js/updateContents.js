@@ -1,4 +1,4 @@
-function updateOutput() {
+function updateContents() {
     var converter = new showdown.Converter();
     $("#htmlPanel").html(converter.makeHtml($("#mdPanel").val()));
     $("iframe").contents().find("head").html("<style type='text/css'>" + $("#cssPanel").val() + "</style> <base target='_blank'>");

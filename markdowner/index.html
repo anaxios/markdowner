@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
         <link rel="stylesheet" type="text/css" href="css/darkStyle.css">
         <title>Markdowner</title>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
@@ -16,7 +17,6 @@
                 <div id="htmlButton" class="toggleButton">html</div>
                 <div id="outputButton" class="toggleButton activeButton">output</div>
             </div>
-            
         </div>
         <div id="contentWrapper">   
             <textarea id="mdPanel" class="panel"># Hello, world!
@@ -32,41 +32,8 @@ a {color:azure;target:_blank}
             <iframe id="outputPanel" class="panel"></iframe>
         </div>
         
-        <script src="js/updateOutput.js"></script>
-        <script type="text/javascript">
-            // update output on initial load
-            updateOutput();
-
-            var htmlTags = "<style type='text/css'> html {background:color; color:azure;} </style>";
-
-            $(".toggleButton").hover(function() {
-                $(this).addClass("highlightedButton");
-            }, function() {
-                $(this).removeClass("highlightedButton");
-            });
-
-            $(".toggleButton").click( function() {
-                $(this).toggleClass("activeButton");
-                $(this).removeClass("highlightedButton");
-                let panelId = $(this).attr("id");
-                panelId = panelId.slice(0,-6);
-                panelId += "Panel";
-                $("#" + panelId).toggleClass("hidden");
-                let numberOfActivePanels = ($(".panel").length - $(".hidden").length);
-                $(".panel").width(($(window).width() / numberOfActivePanels) - (($(".panel").length - $(".hidden").length) * 2));
-            });
-
-            $(".panel").height($(window).height() - $("#topBar").height() - 26);
-            $(".panel").width(($(window).width() / 2) - (($(".panel").length - $(".hidden").length) * 3));
-            $("#topBar").width($(window).width() - $("#topBar").css("padding"));
-
-            
-            $("textarea").on("change keyup paste", function() {
-                updateOutput();
-            });
-
-        </script>
-
+        <script src="js/updateContents.js"></script>
+        <script src="js/events.js"></script>
     </body>
 </html>
 
