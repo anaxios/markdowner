@@ -41,7 +41,6 @@ function resizePanelHeight () {
             ($(window).height()), 
             ($("#topBar").height() + 15))
     );
-    //$("#topBar").width($(window).width() - $("#topBar").css("padding"));
 }
 
 function resizePanelWidth () {
