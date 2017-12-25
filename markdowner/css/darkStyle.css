@@ -50,6 +50,7 @@ body {
     margin: 0 0 0 0;
     border: 1px solid rgb(17, 17, 17);
     border-left: none;
+    border-bottom: none;
     background-color: rgb(30, 30, 30);
     position: relative;
     float: left;

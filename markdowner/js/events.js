@@ -2,8 +2,10 @@
 $("document").ready( () => {
     resizePanelHeight();
     resizePanelWidth();
-    updateContents();
+    updateContentHead();
+    updateContentBody();
 });
+
 $(window).resize( () => {
     resizePanelHeight();
     resizePanelWidth();
@@ -27,8 +29,9 @@ $(".toggleButton").click( function() {
     resizePanelWidth();
 });
 
-$("textarea").on("change keyup paste load", function() {
-    updateContents();
+$("textarea").on("change keyup paste", function() {
+    updateContentHead();
+    updateContentBody();
 });
 
 
