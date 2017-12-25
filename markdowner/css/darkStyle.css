@@ -19,7 +19,7 @@ body {
 }
 #buttons {
     display: table;
-    margin: 0 auto;
+    margin: 0 0 0 40%;
     cursor: pointer; 
 }
 .toggleButton {
