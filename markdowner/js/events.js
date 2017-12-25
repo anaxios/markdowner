@@ -29,7 +29,7 @@ $(".toggleButton").click( function() {
     resizePanelWidth();
 });
 
-$("textarea").on("change keyup paste", function() {
+$("textarea").on("change keyup paste", () => {
     updateContentHead();
     updateContentBody();
 });
