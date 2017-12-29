@@ -28,9 +28,13 @@ $(".toggleButton").click( function() {
     resizePanelWidth();
 });
 
-$("textarea").on("change keyup paste", () => {
-    updateContentHead();
+$("#mdPanel").on("change keyup paste", () => {
+    updateContentHtml(convertMdToHtml());
     updateContentBody();
+});
+
+$("#cssPanel").on("change keyup paste", () => {
+    updateContentHead();
 });
 
 function resizePanelHeight () {

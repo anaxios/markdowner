@@ -1,5 +1,4 @@
 function updateContentBody () {
-    updateContentHtml(convertMdToHtml());
     $("iframe").contents().find("body").html($("#htmlPanel").val());
 }
 
