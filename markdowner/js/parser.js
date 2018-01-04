@@ -6,53 +6,63 @@ var T_HEAD = ["T_HEAD_1", "T_HEAD_2", "T_HEAD_3", "T_HEAD_4", "T_HEAD_5", "T_HEA
 var htmlOutput = [];
 
 var markDowner = (inputText) => {
-    let hashAccum = 0;
+    let mdSymbol = /#|~|\n/;
+    let buffer = [];
     for (let i = 0; inputText.length > i; i++) {  
-        if (inputText.charAt(i) && inputText.charAt((i + 1)) === "#") {
-            hashAccum++;
-        } else if (hashAccum > 0 && hashAccum < 6 && inputText.charAt(i + 1) != "#") {
-            htmlOutput.unshift(T_HEAD[hashAccum - 1]);
-            hashAccum = 0;
-        } else if (inputText.charAt(i) == "#" && inputText.charAt(i + 1) != "#") {
-            htmlOutput.unshift(T_HEAD[hashAccum]);
-        } else if (hashAccum > 5) {
-            while (hashAccum > 0) {htmlOutput.unshift("#"); hashAccum--;}
-        } else {
-            htmlOutput.unshift(inputText.charAt(i));
-        }
+        if (mdSymbol.test(inputText.charAt(i))) {
+            if (charBuffer.length != 0){
+                isNotSymbol(charBuffer.join(""));
+                buffer.length = 0;
+            }
+        } else { 
+            if (buffer.length != 0) {
+                isSymbol(buffer.join(""));
+                buffer.length = 0;
+            }
 
-        
+        }
+        buffer.push(inputText.charAt(i));        
     }
     return htmlOutput;
 
 }
 
-var mdParser = character => {
-    if (character === "#") {
-        return "T_HEAD";
-    } else if (character === "\n") {
-        if (backTrace() == true) return "T_HEAD_END"; // 
-    } else {
-        return character;
+var isSymbol = buffer => {
+    switch (buffer) {
+        case "#":
+            writeToOutput(T_HEAD[0]);
+            break;
+        case "##":
+            writeToOutput(T_HEAD[1]);
+            break;
+        case "###":
+            writeToOutput(T_HEAD[2]);
+            break;
+        case "####":
+            writeToOutput(T_HEAD[3]);
+            break;
+        case "#####":
+            writeToOutput(T_HEAD[4]);
+            break;        
+        case "######":
+            writeToOutput(T_HEAD[5]);
+            break;
+        case "\n\n":
+            writeToOutput("</p>");
+        default:
+            writeToOutput(buffer);
+        
     }
+
 }
 
-var backTrace = character => {
-    for (element of htmlOutput){
-        switch (element) {
-            case "T_HEAD_END":
-                return false;
-                break;
-            case "T_HEAD":
-                return true;
-                break;
-            default:
-                continue;
-        }
-    } 
-   // else if (c.find(isExcapeChar)) {}
-   
-    
+var isNotSymbol = symbol => {
+    writeToOutput("<p>");
+    writeToOutput(symbol);
+}
+
+var writeToOutput = symbol => {
+    htmlOutput.push(symbol);
 }
 
 
