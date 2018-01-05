@@ -66,6 +66,4 @@ var writeToOutput = symbol => {
 }
 
 
-//buffer
-
-//writer 
+// must look ahead to get this to work easily 
